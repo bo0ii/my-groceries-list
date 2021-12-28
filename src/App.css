@@ -1,0 +1,19 @@
+.Container {
+  display: flex;
+  justify-content: center;
+}
+.GroceryList {
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+  border: 1px solid red;
+}
+.ShoppingCart {
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+  border: 1px solid green;
+}
+
