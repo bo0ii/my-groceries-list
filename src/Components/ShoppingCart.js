@@ -2,16 +2,14 @@ import React, { useState } from "react";
 import { ReactDOM } from "react";
 import List from "./List";
 
-function ShoppingCart({cartItem, setCartItem}) {
+function ShoppingCart(props) {
 
-    // Hier useState cartItems?? Of moet die naar de container component?
-    
-    
+    console.log(props.emptyCart)
     return (
         <div>
             <h1>Winkelmandje</h1>
-            <button className="delete-button">Empty Cart</button>
-            <List cartItem={cartItem} /> {/* Hier doorgeven aan list? */}
+            <button onClick={() => props.emptyCart()} className="delete-button">Empty Cart</button>
+            <List groceries={props.cartItems} isCart={true} increaseShoppingCartItem={props.increaseShoppingCartItem} />
         </div>
     )
 }

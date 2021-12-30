@@ -3,15 +3,30 @@ import { ReactDOM } from "react";
 import ListItem from "./ListItem";
 
 function List(props) {
-    
+
+    const renderGroceryItems = () => {
+
+        if (props.groceries) {
+            return (props.groceries.map(grocery => {
+                return <ListItem
+                    item={grocery}
+                    id={grocery.id}
+                    key={grocery.id}
+                    isCart={props.isCart}
+                    onTransferGroceryItemToShoppingCar={props.onTransferGroceryItemToShoppingCar}
+                    increaseShoppingCartItem={props.increaseShoppingCartItem} />
+            }))
+        }
+    }
+
     return (
         <div>
             <ul>
-                {props.groceries && props.groceries.map((grocery) => <ListItem text={grocery.text} id={grocery.id} key={grocery.id} />)}
+                {renderGroceryItems()}
             </ul>
         </div>
-        
-        // Hoe krijg ik de list gesplitst? Volgens school moet je 1 list kunnen gebruiken voor beide stukjes.. 
+
+
     )
 }
 

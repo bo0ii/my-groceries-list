@@ -3,9 +3,7 @@ import { ReactDOM } from "react";
 
 
 
-function AddGroceryForm({
-    onGrocerySubmit
-}) {
+function AddGroceryForm(props) {
 
     const [inputText, setInputText] = useState("")
 
@@ -16,9 +14,7 @@ function AddGroceryForm({
 
     function createNewGrocery(event) {
         event.preventDefault()
-        onGrocerySubmit({
-            text: inputText, id: Math.random() * 1000
-        });
+        props.onGrocerySubmit({ text: inputText, id: Math.random() * 1000, qty: 1 });
         setInputText('');
     }
 
